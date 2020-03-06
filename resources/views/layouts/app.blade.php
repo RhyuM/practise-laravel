@@ -39,9 +39,18 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+              
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="">
+                                <div class="nav-item dropdown">
+                                    <button type="item" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                       Login as
+                                     </button>
+                                     <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="{{ route('login') }}">{{ __('bidder') }}</a>
+                                      <a class="dropdown-item" href="{{ route('admin.login') }}">{{ __('staff') }}</a>
+                                    </div>
+                                </div>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
