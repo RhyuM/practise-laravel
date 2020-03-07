@@ -43,7 +43,7 @@
                                 <th><a href="{{ route('account_status',['id' => $user->id])}}">@if($user->account_status == 0) Inactive @else Active @endif</a></th>
                              </tr>
                              @endforeach
-                            
+
                 </div>
             </div>
         </div>
