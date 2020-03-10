@@ -17,12 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/account_status/{id}', 'HomeController@account_status')->name('account_status');
+Route::get('/home', 'BidderController@index')->name('home');
 
-    Route::prefix('admin')->group(function()
+Route::prefix('admin')->group(function()
     {
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-        Route::get('/', 'AdminController@index')->name('admin.dashboard');
     });
+ 
+Route::get('/bac', 'AdminController@bac')->name('bac.dashboard');
+Route::get('/twg', 'AdminController@twg')->name('twg.dashboard');

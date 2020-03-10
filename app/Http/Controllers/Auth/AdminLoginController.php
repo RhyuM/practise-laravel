@@ -24,9 +24,13 @@ class AdminLoginController extends Controller
             'password' => 'required|min:6',
         ]);
         
-        if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password],$request->remember))
+        if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'BAC'],$request->remember))
         {
-            return redirect()->intended(route('admin.dashboard'));
+           // return redirect()->intended(route('bac.dashboard'));
+        }
+        else if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'TWG'],$request->remember))
+        {
+            return redirect()->intended(route('twg.dashboard'));
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'));

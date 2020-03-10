@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class AdminController extends Controller
+use DB;
+use App\User;
+use Illuminate\Support\Facades\Redirect;
+class BidderController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -12,8 +14,8 @@ class AdminController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        $this->middleware('auth:admin');
+    {   
+        $this->middleware('auth:');
     }
 
     /**
@@ -21,13 +23,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function bac()
+    public function index()
     {
-        return view('bac');
+        return view('home');
     }
-    public function twg()
-    {
-        return view('twg');
-    }
-    
+   
 }
