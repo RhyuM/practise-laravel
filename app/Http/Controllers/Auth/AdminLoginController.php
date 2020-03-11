@@ -26,7 +26,7 @@ class AdminLoginController extends Controller
         
         if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'BAC'],$request->remember))
         {
-           // return redirect()->intended(route('bac.dashboard'));
+            return redirect()->intended(route('bac.dashboard'));
         }
         else if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'TWG'],$request->remember))
         {
