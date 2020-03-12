@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/yes', function () {
+    return view('bac/layouts/main');
+});
+
 Auth::routes();
 
 Route::get('/home', 'BidderController@index')->name('home');
