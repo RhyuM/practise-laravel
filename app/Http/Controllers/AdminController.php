@@ -23,11 +23,12 @@ class AdminController extends Controller
      */
     public function bac()
     {
-        return view('bac');
+        return view('bac-dashboard');
     }
+    
     public function twg()
     {
-        return view('twg');
+        return view('twg-dashboard');
     }
     
 }

@@ -15,7 +15,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="http://127.0.0.1:8000/bac" class="nav-link">Home</a>
       </li>
      
     </ul>
@@ -66,7 +66,7 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-  <!-- logout -->
+   <!-- logout -->
   
     <li class="nav-item dropdown">
            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -85,6 +85,7 @@
                 </form>
             </div>
         </li>
+     <!-- / logout -->
   </nav>
   <!-- /.navbar -->
 
@@ -94,10 +95,10 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-<!-- include('bac.layouts.header') -->
+    @yield('content')
 
     <!-- /.content-header -->
-
+      
     <!-- Main content -->
     
     <!-- /.content -->
@@ -107,7 +108,7 @@
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
+    <!-- Control sidebar content goes here --> 
   </aside>
   <!-- /.control-sidebar -->
 </div>

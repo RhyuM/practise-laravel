@@ -15,13 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/yes', function () {
-    return view('bac/layouts/main');
-});
-
 Auth::routes();
 
-Route::get('/home', 'BidderController@index')->name('home');
+Route::get('/home', 'BidderController@index')->name('bidder-dashboard');
+
+Route::resource('/user-management/activation', 'UserManagementController');
+Route::get('account_status/{id}', 'UserManagementController@account_status')->name('account_status');
 
 Route::prefix('admin')->group(function()
     {
@@ -31,3 +30,4 @@ Route::prefix('admin')->group(function()
  
 Route::get('/bac', 'AdminController@bac')->name('bac.dashboard');
 Route::get('/twg', 'AdminController@twg')->name('twg.dashboard');
+
