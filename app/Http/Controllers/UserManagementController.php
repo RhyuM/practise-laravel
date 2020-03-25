@@ -22,12 +22,12 @@ class UserManagementController extends Controller
     public function index()
     {
         
-        $users = DB::table('users')->orderBy('id', 'asc')->get();
+        $users = DB::table('users')->orderBy('id', 'asc')->paginate(10);
 
         return view('bac/user-management/index', ['users' => $users]);
         
     }
-    public function account_status(Request $request, $id)
+    public function accountStatus(Request $request, $id)
     {
          $data = User::find($id);
 
@@ -41,7 +41,8 @@ class UserManagementController extends Controller
          }
 
          $data->save();
+         $message=" account status has been changed successfully";
          
-         return Redirect::to('user-management/activation')->with('message', 'account status has been changed successfully.');
+        return Redirect::to('user-management/activation')->with('message', $data->first_name. $message);
     }
 }

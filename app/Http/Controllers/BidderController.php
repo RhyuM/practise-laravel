@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use App\User;
-use Illuminate\Support\Facades\Redirect;
 class BidderController extends Controller
 {
     /**

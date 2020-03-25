@@ -7,9 +7,9 @@
 
             @if(session('message'))
             <div class="alert alert-success">
-                {{session('message')}}
+                  {{session('message')}}
             </div>
-            @endif
+            @endif  
             
             <div class="card">
                 <div class="card-header">Bidder List</div>
@@ -24,27 +24,27 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <td>No.</td>
-                                <td>First Name</td>
-                                <td>Last Name</td>
-                                <td>Email</td>
-                                <td>Status</td>
-                                <td>Action</td>
+                                <th>#</th>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-                    
+                        <?php $no = 1; ?>
                         @foreach($users as $user)
                             <tr>
-                                <th></th>
-                                <th>{{$user->first_name}}</th>
-                                <th>{{$user->last_name}}</th>
-                                <th>{{$user->email}}</th>
-                                <th>
+                                <td>{{$no++}}</td>
+                                <td>{{$user->company_name}}</td>
+                                <td>{{$user->last_name}} {{$user->first_name }}, {{$user->middle_name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>
                                     @if($user->account_status == 0) 
                                         Deactivated
                                     @else 
                                         Activated
-                                    @endif</th>
+                                    @endif</td>
                                     
                                 <th><a href="{{ route('account_status',['id' => $user->id])}}">
                                     
@@ -58,7 +58,9 @@
 
                            @endforeach
 
-                      </table>
+                    </table>    
+
+                    {{ $users->links() }}
                 </div>
             </div>
         </div>

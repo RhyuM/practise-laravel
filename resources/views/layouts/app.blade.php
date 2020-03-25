@@ -43,7 +43,7 @@
                         @guest
                             <li class="">
                                 <div class="nav-item dropdown">
-                                    <button type="item" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <button type="item" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
                                        Login as
                                      </button>
                                      <div class="dropdown-menu">

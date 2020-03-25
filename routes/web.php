@@ -19,8 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'BidderController@index')->name('bidder-dashboard');
 
-Route::resource('/user-management/activation', 'UserManagementController');
-Route::get('account_status/{id}', 'UserManagementController@account_status')->name('account_status');
+Route::get('/user-management/activation', 'UserManagementController@index');
+Route::get('account_status/{id}', 'UserManagementController@accountStatus')->name('account_status');
+
+Route::resource('/index', 'ProjectController');
 
 Route::prefix('admin')->group(function()
     {
