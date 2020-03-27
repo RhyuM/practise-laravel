@@ -55,7 +55,7 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('tender-management/tender-list') }}" class="nav-link">
                   <!-- <i class="far fa-circle nav-icon"></i> -->
                   <p>Tender List</p>
                 </a>
