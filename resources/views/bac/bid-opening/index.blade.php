@@ -1,17 +1,12 @@
-@extends('bac.user-management.base')
+@extends('bac.bid-opening.base')
 
 @section('action-content')
 <section class="content">
       <div class="row">
         <div class="col-12">
           <div class="card">  
-          @if(session('message'))
-            <div class="alert alert-success">
-                  {{session('message')}}
-            </div>
-            @endif  
             <div class="card-header">
-                <h3 class="card-title">Bidder List</h3>
+                <h3 class="card-title">Tenders</h3>
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -19,13 +14,9 @@
                              <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                         </div>
                      </div>
-                </div>
+                </div>  
             </div>
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+            
             <!-- /.card-header -->
             <div class="card-body">
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -39,37 +30,24 @@
                         <thead>
                           <tr role="row">
                             <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" aria-sort="descending">#</th>
-                            <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" aria-sort="descending">Company</th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Email</th>
+                            <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" aria-sort="descending">Description</th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Type</th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Bid Opening Date</th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Approve Budget</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Status</th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Action</th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">View/Open</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Action</th></tr>
                         </thead>
                         <tbody>
-                          <?php $no = 1; ?>
-                          @foreach($users as $index => $user)
+                          @foreach($projects as $index => $project)
                             <tr role="row" class="odd">
-                              <td class="sorting_1" tabindex="">{{$users->firstItem() + $index}}</td>
-                              <td class="sorting_1" tabindex="">{{$user->company_name}}</td>
-                              <td class="">{{$user->last_name}} {{$user->first_name }}, {{$user->middle_name}}</td>
-                              <td class="">{{$user->email}}</td>
-                              <td>
-                                    @if($user->account_status == 0) 
-                                        Deactivated
-                                    @else 
-                                        Activated
-                                    @endif</td>
-                                    
-                                <th><a href="{{ route('account_status',['id' => $user->id])}}">
-                                    
-                                    @if($user->account_status == 0) 
-                                      Activate 
-                                    @else 
-                                      Deactivate 
-                                      
-                                    @endif</a>
-                                    </th>
+                            <td class="sorting_1" tabindex="">{{$projects->firstItem() + $index}}</td>
+                              <td class="sorting_1" tabindex="">{{$project->description}}</td>
+                              <td class="">{{$project->project_type}}</td>
+                              <td>{{$project->opening_date}}</td>
+                              <td class="">{{$project->approve_budget_cost}}</td>
+                              <td class="">{{$project->project_status}}</td>  
+                              <td></td>  
                               <td class="" style="display: none;">A</td>
                            </tr>
                           @endforeach 
@@ -79,11 +57,11 @@
                 </div>
                   <div class="row">
                       <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing <strong>{{ $users->firstItem() }} - {{ $users->lastItem() }}</strong> of <strong>{{$users->total()}}</strong> entries</div>
+                        <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing <strong>{{ $projects->firstItem() }} - {{ $projects->lastItem() }}</strong> of <strong>{{$projects->total()}}</strong> projects</div>
                       </div>
                       <div class="col-sm-12 col-md-7" >
                         <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                          {{ $users->links() }}
+                          {{ $projects->links() }}
                         </div>
                       </div>
                   </div>
@@ -93,5 +71,5 @@
         </div>
       <!-- /.row -->
       </div>
-  </section>    
+  </section>
 @endsection

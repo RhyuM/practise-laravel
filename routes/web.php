@@ -19,10 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'BidderController@index')->name('bidder-dashboard');
 
+// user management
 Route::get('/user-management/activation', 'UserManagementController@index');
 Route::get('account_status/{id}', 'UserManagementController@accountStatus')->name('account_status');
 
-Route::resource('tender-management/tender-list', 'ProjectController');
+// tender management
+Route::resource('/tender-management/tender-list', 'ProjectController');
+
+// bid opening
+Route::get('/bid-opening/tenders', 'BidOpeningController@index')->name('tenders.index');
 
 Route::prefix('admin')->group(function()
     {

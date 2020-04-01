@@ -85,7 +85,7 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('bid-opening/tenders') }}" class="nav-link">
                   <!-- <i class="far fa-circle nav-icon"></i> -->
                   <p>Tenders</p>
                 </a>

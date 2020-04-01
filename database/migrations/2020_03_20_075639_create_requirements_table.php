@@ -17,7 +17,7 @@ class CreateRequirementsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('projects_id')->unsigned();
             $table->foreign('projects_id')->references('id')->on('projects');
-            $table->string('project_type');
+            $table->string('type');
             $table->string('description');
             $table->timestamps();
         });

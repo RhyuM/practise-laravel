@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+
+    protected $redirectTo = 'admin/login';
+    
     /**
      * Create a new controller instance.
      *
