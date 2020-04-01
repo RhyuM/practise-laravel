@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('description');
             $table->string('project_type');
-            $table->string('opening_date');
+            $table->datetime('opening_date');
             $table->string('approve_budget_cost');
             $table->string('project_status');
             $table->timestamps();

@@ -17,8 +17,8 @@ class CreateBidsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
-            $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('project');
+            $table->integer('projects_id')->unsigned();
+            $table->foreign('projects_id')->references('id')->on('projects');
             $table->integer('bids_details_id')->unsigned();
             $table->foreign('bids_details_id')->references('id')->on('bids_details');
             $table->timestamp('submitted_date')->nullable();

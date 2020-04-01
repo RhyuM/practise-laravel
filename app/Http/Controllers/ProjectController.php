@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 class ProjectController extends Controller
 {
     //
@@ -26,9 +27,9 @@ class ProjectController extends Controller
     public function index()
     {
         //Show all Projects from the database and return to view
-        $project = Project::all();
+        $projects = Project::paginate(5);
 
-        return view('bac.tender-management.tender-list.index',['project'=>$project]);
+        return view('bac.tender-management.tender-list.index',compact('projects'));
     }
     /**
      * Show the form for creating a new resource.
@@ -50,15 +51,15 @@ class ProjectController extends Controller
     {
         //Persist the Project in the database
         //form data is available in the request object
-        $project = new Project();
+        $projects = new Project();
         //input method is used to get the value of input with its
         //name specified
-        $project->description = $request->input('description');
-        $project->project_type = $request->input('project_type');
-        $project->opening_date = $request->input('opening_date');
-        $project->approve_budget_cost = $request->input('approve_budget_cost');
-        $project->project_status = $request->input('project_status');
-        $project->save();
+        $projects->description = $request->input('description');
+        $projects->project_type = $request->input('project_type');
+        $projects->opening_date = $request->input('opening_date');
+        $projects->approve_budget_cost = $request->input('approve_budget_cost');
+        $projects->project_status = $request->input('project_status');
+        $projects->save();
 
         return redirect()->intended('tender-management/tender-list')->with('info','Project Added Successfully');
     }
@@ -74,8 +75,8 @@ class ProjectController extends Controller
     public function edit($id)
     {
         //Find the Project
-        $project = Project::find($id);
-        return view('bac.tender-management.tender-list.edit',['project'=> $project]);
+        $projects = Project::find($id);
+        return view('bac.tender-management.tender-list.edit',['projects'=> $projects]);
     }
     /**
      * Update the specified resource in storage.
@@ -87,13 +88,13 @@ class ProjectController extends Controller
     public function update(Request $request)
     {
         //Retrieve the Project and update
-        $project = Project::find($request->input('id'));
-        $project->description = $request->input('description');
-        $project->project_type = $request->input('project_type');
-        $project->opening_date = $request->input('opening_date');
-        $project->approve_budget_cost = $request->input('approve_budget_cost');
-        $project->project_status = $request->input('project_status');
-        $project->save();
+        $projects = Project::find($request->input('id'));
+        $projects->description = $request->input('description');
+        $projects->project_type = $request->input('project_type');
+        $projects->opening_date = $request->input('opening_date');
+        $projects->approve_budget_cost = $request->input('approve_budget_cost');
+        $projects->project_status = $request->input('project_status');
+        $projects->save();
 
         return redirect()->intended('tender-management/tender-list')->with('info','Project Updated Successfully');
     }
@@ -105,8 +106,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $project = Project::find($id);
-        $project->delete();
+        $projects = Project::find($id);
+        $projects->delete();
 
         return redirect()->intended('tender-management/tender-list');
     }

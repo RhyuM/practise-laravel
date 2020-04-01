@@ -15,8 +15,8 @@ class CreateEnvitationTable extends Migration
     {
         Schema::create('envitation', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('project');
+            $table->integer('projects_id')->unsigned();
+            $table->foreign('projects_id')->references('id')->on('projects');
             $table->string('description');
             $table->timestamps();
         });
