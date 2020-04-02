@@ -4,17 +4,10 @@
 <section class="content">
       <div class="row">
         <div class="col-12">
+          <h5><td>Tenders to be open today, <strong>{{Carbon\Carbon::today()->format('d-Y-M')}}</strong></td></h5>
           <div class="card">  
             <div class="card-header">
                 <h3 class="card-title">Tenders</h3>
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                        <div class="input-group-append">
-                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                        </div>
-                     </div>
-                </div>  
             </div>
             
             <!-- /.card-header -->
@@ -32,39 +25,38 @@
                             <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" aria-sort="descending">#</th>
                             <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" aria-sort="descending">Description</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Type</th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Bid Opening Date</th>
+                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Bid Opening Date & time</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Approve Budget</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Status</th>
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">View/Open</th>
-                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="display: none;">Action</th></tr>
                         </thead>
                         <tbody>
-                          @foreach($projects as $index => $project)
-                            <tr role="row" class="odd">
-                            <td class="sorting_1" tabindex="">{{$projects->firstItem() + $index}}</td>
-                              <td class="sorting_1" tabindex="">{{$project->description}}</td>
-                              <td class="">{{$project->project_type}}</td>
-                              <td>{{$project->opening_date}}</td>
-                              <td class="">{{$project->approve_budget_cost}}</td>
-                              <td class="">{{$project->project_status}}</td>  
-                              <td></td>  
-                              <td class="" style="display: none;">A</td>
-                           </tr>
+                          <?php $index = 1; ?>
+                          @foreach($projects as $project)
+                              @if (Carbon\Carbon::today()->format('Y-m-d') ===  Carbon\Carbon::parse($project->opening_date)->format('Y-m-d'))
+                               <tr role="row" class="odd">
+                                  <td class="sorting_1" tabindex="">{{$index++}}</td>
+                                    <td class="sorting_1" tabindex="">{{$project->description}}</td>
+                                    <td class="">{{$project->project_type}}</td>
+                                    <td>{{Carbon\Carbon::parse($project->opening_date)->format('d-Y-M h:i:s A')}}</td>
+                                    <td class="">{{$project->approve_budget_cost}}</td>
+                                    <td class="">{{$project->project_status}}</td>  
+                                    <td>
+                                          @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
+                                              <div class="tombol-nav">
+                                                 <a href="#" class="btn btn-primary btn-sm">view</a><br>
+                                              </div>
+                                          @else
+                                              <p>disable</p>
+                                          @endif</td> 
+                                </tr>
+                              @endif</td>
                           @endforeach 
                         </tbody>
                       </table>
                    </div>
                 </div>
-                  <div class="row">
-                      <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing <strong>{{ $projects->firstItem() }} - {{ $projects->lastItem() }}</strong> of <strong>{{$projects->total()}}</strong> projects</div>
-                      </div>
-                      <div class="col-sm-12 col-md-7" >
-                        <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                          {{ $projects->links() }}
-                        </div>
-                      </div>
-                  </div>
+                  
           <!-- /.card -->
               </div>
         <!-- /.col -->

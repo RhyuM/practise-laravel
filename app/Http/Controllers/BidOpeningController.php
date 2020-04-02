@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Project;
+use Carbon\Carbon;
+use DB;
 class BidOpeningController extends Controller
 {
   //
@@ -25,7 +27,7 @@ class BidOpeningController extends Controller
     public function index()
     {
         //Show all Projects from the database and return to view
-        $projects = Project::paginate(5);
+        $projects = Project::all();
 
         return view('bac.bid-opening.index',compact('projects'));
     }
