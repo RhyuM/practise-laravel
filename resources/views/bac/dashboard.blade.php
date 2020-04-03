@@ -31,11 +31,19 @@
         </div>
       </div>
     </form>
-
+    
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
+
+      <!-- time clock -->
+      <li class="nav-item">
+        <body onload="startTime()">
+            <div id="clock"></div>
+            <div id="date"></div>
+      </li>
+      
+       <!-- Notifications Dropdown Menu -->
+       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
@@ -95,7 +103,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    @include('bac.layouts.header')
+    @yield('content')
 
     <!-- /.content-header -->
       

@@ -20,19 +20,19 @@ class AdminController extends Controller
         $this->middleware('auth:admin');
     }
 
-    /**
+    /** 
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function bac()
     {
-        return view('bac-dashboard');
+        return view('bac/dashboard');
     }
     
     public function twg()
     {
-        return view('twg-dashboard');
+        return view('twg/dashboard');
     }
     
 }

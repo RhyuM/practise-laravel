@@ -50,7 +50,7 @@
                             <td class="sorting_1" tabindex="">{{$projects->firstItem() + $index}}</td>
                               <td class="sorting_1" tabindex="">{{$project->description}}</td>
                               <td class="">{{$project->project_type}}</td>
-                              <td>{{Carbon\Carbon::parse($project->opening_date)->format('d-Y-M h:i:s A')}}</td>
+                              <td>{{Carbon\Carbon::parse($project->opening_date)->format('d-M-Y h:i:s A')}}</td>
                               <td class="">{{$project->approve_budget_cost}}</td>
                               <td class="">{{$project->project_status}}</td>  
                               <td>
