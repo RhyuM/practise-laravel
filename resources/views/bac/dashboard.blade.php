@@ -15,7 +15,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="http://127.0.0.1:8000/bac" class="nav-link">Home</a>
+        <a href="http://nameless-dawn-87671.herokuapp.com/bac" class="nav-link">Home</a>
       </li>
      
     </ul>
