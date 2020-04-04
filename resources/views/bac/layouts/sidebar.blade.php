@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
     <!-- Brand Logo -->
-    <a href="http://127.0.0.1:8000/bac" class="brand-link navbar-gray">
+    <a href="http://nameless-dawn-87671.herokuapp.com/bac" class="brand-link navbar-gray">
       <img src="{{ asset('dist/img/manticaoLogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">BIMS @ MANTICAO</span>
