@@ -4,7 +4,7 @@
 <section class="content">
       <div class="row">
         <div class="col-12">
-          <h5><td>Tenders to be open today, <strong>{{Carbon\Carbon::today()->format('d-M-Y')}}</strong></td></h5>
+          <h5><td>Tenders to be open today, <b>{{Carbon\Carbon::today()->format('d-M-Y')}}</b></td></h5>
           <div class="card">  
             <div class="card-header">
                 <h3 class="card-title">Tenders</h3>
@@ -44,7 +44,7 @@
                                     <td>
                                           @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
                                               <div class="tombol-nav">
-                                                 <a href="#" class="btn btn-primary btn-sm">view</a><br>
+                                                 <a href="#" class="fas fa-file"></a><br>
                                               </div>
                                           @else
                                               <p>disable</p>

@@ -36,7 +36,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 
-<!-- datetime -->
+<!-- datetime picker-->
 <script>
        $(function () 
        {$('#reservationtime').daterangepicker({
@@ -70,14 +70,23 @@
         var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         var curWeekDay = days[today.getDay()];
         var curDay = today.getDate();
+        day = checkDay(curDay);
         var curMonth = months[today.getMonth()];
         var curYear = today.getFullYear();
-        var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+        var date = curWeekDay+", "+day+" "+curMonth+" "+curYear;
         document.getElementById("date").innerHTML = date;
         
         var time = setTimeout(function(){ startTime() }, 500);
     }
     function checkTime(i) 
+    {
+        if (i < 10) 
+        {
+            i = "0" + i;
+        }
+        return i;
+    }
+    function checkDay(i) 
     {
         if (i < 10) 
         {
