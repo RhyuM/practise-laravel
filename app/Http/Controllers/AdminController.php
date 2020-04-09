@@ -25,14 +25,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function bac()
+    public function index()
     {
-        return view('bac/dashboard');
+        return view('admin.common.index');
     }
-    
-    public function twg()
-    {
-        return view('twg/dashboard');
-    }
-    
 }

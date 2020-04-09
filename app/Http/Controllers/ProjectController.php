@@ -27,9 +27,9 @@ class ProjectController extends Controller
     public function index()
     {
         //Show all Projects from the database and return to view
-        $projects = Project::paginate(5);
+        $projects = Project::paginate(10);
 
-        return view('bac.tender-management.tender-list.index',compact('projects'));
+        return view('admin.bac.tender-management.tender-list.index',compact('projects'));
     }
     /**
      * Show the form for creating a new resource.
@@ -39,7 +39,7 @@ class ProjectController extends Controller
     public function create()
     {
         //Return view to create Project
-        return view('bac.tender-management.tender-list.create');
+        return view('admin.bac.tender-management.tender-list.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -76,7 +76,7 @@ class ProjectController extends Controller
     {
         //Find the Project
         $projects = Project::find($id);
-        return view('bac.tender-management.tender-list.edit',['projects'=> $projects]);
+        return view('admin.bac.tender-management.tender-list.edit',['projects'=> $projects]);
     }
     /**
      * Update the specified resource in storage.

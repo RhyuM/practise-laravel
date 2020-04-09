@@ -1,4 +1,4 @@
-@extends('bidder.layouts.app-template')
+@extends('admin.common.layouts.app-template')
 @section('content')
   <div class="content-header">
         <div class="container-fluid">

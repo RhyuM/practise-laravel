@@ -22,9 +22,9 @@ class UserManagementController extends Controller
     public function index()
     {
         
-        $users = DB::table('users')->orderBy('id', 'asc')->paginate(5);
+        $users = DB::table('users')->orderBy('id', 'asc')->paginate(10);
 
-        return view('bac/user-management/index', ['users' => $users]);
+        return view('admin.bac.user-management.index', ['users' => $users]);
         
     }
     public function accountStatus(Request $request, $id)

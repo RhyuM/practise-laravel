@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <strong>ENVITATIONS will be post here<strong>
+                    <strong>INVITATIONS will be post here<strong>
                 </div>
             </div>
         </div>

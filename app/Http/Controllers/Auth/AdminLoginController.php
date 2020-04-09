@@ -9,7 +9,7 @@ class AdminLoginController extends Controller
       
     public function __construct()
     {
-        $this->middleware('guest:admin');
+        $this->middleware('guest:admin')->except('logout');
     }
 
     public function showLoginForm()
@@ -27,13 +27,9 @@ class AdminLoginController extends Controller
 
         $errors = [$this->username() => trans('auth.failed')];
         
-        if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'BAC'],$request->remember))
+        if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password],$request->remember))
         {
-             return redirect()->intended(route('bac.dashboard'));
-        }
-        else if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password, 'type' => 'TWG'],$request->remember))
-        {
-            return redirect()->intended(route('twg.dashboard'));
+             return redirect()->intended(route('admin.common.index'));
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'))->withErrors($errors);

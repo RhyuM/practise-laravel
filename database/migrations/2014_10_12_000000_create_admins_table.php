@@ -20,7 +20,7 @@ class CreateAdminsTable extends Migration
             $table->string('middle_name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('type', 60);
+            $table->enum('role',  ['BAC', 'TWG']);
             $table->rememberToken();
             $table->timestamps();
         });
