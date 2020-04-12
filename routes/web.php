@@ -18,20 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 // user management
-Route::get('/user-management/activation', 'UserManagementController@index');
-Route::get('account_status/{id}', 'UserManagementController@accountStatus')->name('account_status');
+Route::get('/user-management/bidder-list', 'UserManagementController@index')->middleware('can:isBAC');
+Route::get('account_status/{id}', 'UserManagementController@accountStatus')->middleware('can:isBAC')->name('account_status');
 
 // tender management
-Route::resource('/tender-management/tender-list', 'ProjectController');
+Route::resource('/tender-management/tender-list', 'ProjectController')->middleware('can:isBAC');
 
 // bid opening
 Route::get('/bid-opening/tenders', 'BidOpeningController@index')->name('tenders.index');
 
+//login
 Route::prefix('admin')->group(function()
     {
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     });
-
 Route::get('/dashboard', 'AdminController@index')->name('admin.common.index');
 Route::get('/home', 'BidderController@index')->name('bidder-index');    

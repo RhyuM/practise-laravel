@@ -1,5 +1,9 @@
 @extends('admin.bac.tender-management.tender-list.base')
 
+@section('title')
+<title>BIMS | TENDER LIST</title>
+@endsection
+
 @section('action-content')
 <section class="content">
       <div class="row">

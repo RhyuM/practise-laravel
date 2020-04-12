@@ -26,7 +26,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //Show all Projects from the database and return to view
+        // $this->authorize('isBAC');
         $projects = Project::paginate(10);
 
         return view('admin.bac.tender-management.tender-list.index',compact('projects'));

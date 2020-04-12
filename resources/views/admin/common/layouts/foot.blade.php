@@ -46,13 +46,13 @@
 <script>
   $(function () {
     $("#example1").DataTable({
-      "paging": false,
       "responsive": true,
       "autoWidth": false,
+      "paging": false,
     });
     $('#example2').DataTable({
       "paging": false,
-      "lengthChange": true,
+      "lengthChange": false,
       "searching": false,
       "ordering": true,
       "info": false,

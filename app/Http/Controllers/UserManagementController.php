@@ -21,7 +21,8 @@ class UserManagementController extends Controller
 
     public function index()
     {
-        
+        // $this->authorize('isBAC');
+
         $users = DB::table('users')->orderBy('id', 'asc')->paginate(10);
 
         return view('admin.bac.user-management.index', ['users' => $users]);
@@ -29,13 +30,14 @@ class UserManagementController extends Controller
     }
     public function accountStatus(Request $request, $id)
     {
+        // $this->authorize('isBAC');
          $data = User::find($id);
 
          if($data->account_status == 0)
          {
              $data->account_status = 1;
          }
-         else
+         else   
          {
             $data->account_status = 0;
          }
@@ -43,6 +45,6 @@ class UserManagementController extends Controller
          $data->save();
          $message=" account status has been changed successfully";
          
-        return Redirect::to('user-management/activation')->with('message', $data->first_name. $message);
+        return Redirect::to('user-management/bidder-list')->with('message', $data->first_name. $message);
     }
 }

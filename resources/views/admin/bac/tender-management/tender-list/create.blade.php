@@ -1,5 +1,9 @@
 @extends('admin.bac.tender-management.tender-list.base')
 
+@section('title')
+<title>BIMS | CREATE</title>
+@endsection
+
 @section('action-content')
 <div class="container">
     <div class="row justify-content-center">
