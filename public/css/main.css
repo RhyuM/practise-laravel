@@ -1,0 +1,28 @@
+
+    #clock
+    {
+        position: absolute;
+        top: 6%;
+        left: 41%;
+        font-family: Orbitron;
+        font-size:25px;
+        text-shadow:0px 0px 1px #fff;
+        color:#17D4FE;
+    }
+    #clock span 
+    {
+        color:#17D4FE;
+        text-shadow:0px 0px 1px #333;
+        font-size:15px;
+        left:-10px;
+    }
+    #date
+    {
+        position: absolute;
+        top: 60%;
+        left: 41%;
+        letter-spacing:2px;
+        font-size:9px;
+        font-family:arial,sans-serif;
+        color:#fff;
+    }

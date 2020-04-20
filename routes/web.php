@@ -35,3 +35,7 @@ Route::prefix('admin')->group(function()
     });
 Route::get('/dashboard', 'AdminController@index')->name('admin.common.index');
 Route::get('/home', 'BidderController@index')->name('bidder-index');    
+
+// change password
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('change-password', 'ChangePasswordController@store')->name('change.password');

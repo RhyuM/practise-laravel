@@ -55,7 +55,7 @@ class ProjectController extends Controller
         //input method is used to get the value of input with its
         //name specified
         $projects->description = $request->input('description');
-        $projects->project_type = $request->input('project_type');
+        $projects->category = $request->input('category');
         $projects->opening_date = $request->input('opening_date');
         $projects->approve_budget_cost = $request->input('approve_budget_cost');
         $projects->project_status = $request->input('project_status');
@@ -90,7 +90,7 @@ class ProjectController extends Controller
         //Retrieve the Project and update
         $projects = Project::find($request->input('id'));
         $projects->description = $request->input('description');
-        $projects->project_type = $request->input('project_type');
+        $projects->category = $request->input('category');
         $projects->opening_date = $request->input('opening_date');
         $projects->approve_budget_cost = $request->input('approve_budget_cost');
         $projects->project_status = $request->input('project_status');

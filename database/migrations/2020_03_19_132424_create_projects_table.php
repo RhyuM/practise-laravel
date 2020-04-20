@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('description');
-            $table->string('project_type');
+            $table->string('category');
             $table->datetime('opening_date');
             $table->string('approve_budget_cost');
             $table->string('project_status');

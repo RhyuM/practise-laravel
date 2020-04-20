@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBidsDetailsTable extends Migration
+class CreateBidDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBidsDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bids_details', function (Blueprint $table) {
+        Schema::create('bid_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('submission_start_date');
             $table->string('submission_date');
@@ -28,6 +28,6 @@ class CreateBidsDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bids_details');
+        Schema::dropIfExists('bid_details');
     }
 }

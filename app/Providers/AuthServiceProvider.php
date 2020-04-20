@@ -24,12 +24,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        /* define a bac user role */
+        /* define a BAC user role */
         Gate::define('isBAC', function($admin) {
             return $admin->role == 'BAC';
         });
       
-        /* define a twg role */
+        /* define a TWG user role */
         Gate::define('isTWG', function($admin) {
             return $admin->role == 'TWG';
         });

@@ -32,7 +32,7 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ url('change-password') }}" class="dropdown-item">
                             <i class="fa fa-lock fa-fw"></i> Change Password
                         </a>
                         <div class="dropdown-divider"></div>
@@ -54,7 +54,21 @@
 
           <!-- Content Wrapper. Contains page content -->
           <div class="content-wrapper" style="min-height: 1200.88px;">
+          @section('alertMessage')
+  {{-- Alert Message --}}
+  <script type="text/javascript">
+      @if(Session::has('message'))
+          toastr.options = {
+              "positionClass": "toast-top-center"
+          }
+          toastr.success("{{ Session::get('message') }}", 'Success!!', {timeOut: 5000});
+      @endif
+  </script>
+  {{-- /.Alert Message --}}
+@endsection
+
               @yield('content')
+              
           </div>
           <!-- /.content-wrapper -->
           @include('admin.common.layouts.footer')

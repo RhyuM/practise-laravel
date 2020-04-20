@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
 
 
-    protected $redirectTo = 'admin/login';
+    protected $redirectTo = 'dashboard';
     
     /**
      * Create a new controller instance.
