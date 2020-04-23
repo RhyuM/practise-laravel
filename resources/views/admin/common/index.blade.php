@@ -38,6 +38,7 @@
           </div>
           <!-- ./col -->
 
+          @can('isBAC')
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
@@ -52,6 +53,7 @@
               <a href="{{ url('user-management/bidder-list') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          @endcan
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
