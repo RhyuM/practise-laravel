@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
+use App\User;
+use App\Project;
 class AdminController extends Controller
 {
 
@@ -27,7 +29,15 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.common.index');
+        // Carbon::setLocale('nl');
+        // $today = Carbon::today();
+        // $users = Admin::count();
+        // $projects = Project::count();
+
+        $users = User::whereDate('created_at', '=', Carbon::today() )->count();
+        $projects = Project::whereDate('opening_date', '=', Carbon::today() )->count();
+        
+        return view('admin.common.index', compact('users','projects'));
     }
     
 }

@@ -22,7 +22,7 @@
                           </div>
 
                           <div class="form-group row">
-                            <label for="project_type" class="col-md-2 col-form-label text-md-right">Category:</label>
+                            <label for="category" class="col-md-2 col-form-label text-md-right">Category:</label>
                               <div class="col-md-9">
                                  <select class="form-control" id="category" name="category" id = "category" class="form-control" >
                                   <option  @if(old('category',$projects->category) == 'Infrastructure') selected @endif >
