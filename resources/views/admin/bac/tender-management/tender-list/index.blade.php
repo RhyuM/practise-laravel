@@ -4,6 +4,10 @@
 <title>BIMS | TENDER LIST</title>
 @endsection
 
+@section('tenderManagementMenuOpen', 'menu-open')
+@section('tenderManagementOptionActive', 'active')
+@section('tenderListLinkActive', 'active')
+
 @section('action-content')
 <section class="content">
       <div class="row">

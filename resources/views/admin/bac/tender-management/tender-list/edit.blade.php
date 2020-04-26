@@ -4,6 +4,10 @@
 <title>BIMS | EDIT</title>
 @endsection
 
+@section('tenderManagementMenuOpen', 'menu-open')
+@section('tenderManagementOptionActive', 'active')
+@section('tenderListLinkActive', 'active')
+
 @section('action-content')
 <div class="container">
     <div class="row justify-content-center">

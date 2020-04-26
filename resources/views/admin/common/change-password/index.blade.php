@@ -1,5 +1,9 @@
 @extends('admin.common.change-password.base')
 
+@section('title')
+<title>BIMS | CHANGE PASSWORD</title>
+@endsection
+
 @section('action-content')
 <section class="content">
       <div class="container-fluid">

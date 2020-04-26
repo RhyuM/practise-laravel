@@ -1,5 +1,7 @@
 @extends('admin.common.dashboard')
 
+@section('dashboardLinkActive', 'active')
+
 @section('action-content')
 <section class="content">
       <div class="container-fluid">

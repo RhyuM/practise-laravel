@@ -1,5 +1,9 @@
 @extends('admin.bac.user-management.base')
 
+@section('userManagementMenuOpen', 'menu-open')
+@section('userManagementOptionActive', 'active')
+@section('listOfRegisteredBidderLinkActive', 'active')
+
 @section('action-content')
 <section class="content">
       <div class="row">

@@ -1,11 +1,19 @@
 @extends('admin.common.bid-opening.base')
 
+@section('title')
+<title>BIMS | BID OPENING</title>
+@endsection
+
+@section('bidOpeningMenuOpen', 'menu-open')
+@section('bidOpeningOptionActive', 'active')
+@section('tendersLinkActive', 'active')
+
 @section('action-content')
 <section class="content">
       <div class="row">
         <div class="col-12">
           <h6><td>Tenders to be open today, <b>{{Carbon\Carbon::today()->format('d-M-Y')}}</b></td></h6>
-          <div class="card card-success">  
+          <div class="card card-info">  
               <div class="card-header">
                   <h3 class="card-title">Tenders</h3>
               </div>
@@ -45,7 +53,7 @@
                                                 <td>
                                                       @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
                                                           <div class="tombol-nav">
-                                                             <a href="#" class="fas fa-file"></a><br>
+                                                             <a href="#" class="fas fa-file "></a><br>
                                                           </div>
                                                       @else
                                                           <p>disable</p>

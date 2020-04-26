@@ -1,9 +1,5 @@
 @extends('admin.common.layouts.app-template')
 
-@section('title')
-<title>BIMS | BID OPENING</title>
-@endsection
-
 @section('content')
   <div class="content-header">
         <div class="container-fluid">

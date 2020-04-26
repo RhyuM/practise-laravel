@@ -4,10 +4,10 @@
   @include('admin.common.layouts.head')
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-open">
     <div class="wrapper">
           <!-- Navbar -->
-          <nav class="main-header navbar navbar-expand navbar-dark navbar-secondary">
+          <nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
               <!-- Left navbar links -->
               <ul class="navbar-nav">
                 <li class="nav-item">
@@ -54,18 +54,6 @@
 
           <!-- Content Wrapper. Contains page content -->
           <div class="content-wrapper" style="min-height: 1200.88px;">
-          @section('alertMessage')
-  {{-- Alert Message --}}
-  <script type="text/javascript">
-      @if(Session::has('message'))
-          toastr.options = {
-              "positionClass": "toast-top-center"
-          }
-          toastr.success("{{ Session::get('message') }}", 'Success!!', {timeOut: 5000});
-      @endif
-  </script>
-  {{-- /.Alert Message --}}
-@endsection
 
               @yield('content')
               
