@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 140px;">
-                        <a href="{{route('tender-list.create') }}" class = "btn btn-primary btn-sm">Add New Project</a>
+                        <a href="{{route('tender-list.create') }}" class = "btn btn-dark btn-sm">Add New Project</a>
                      </div>
                 </div>
             </div>

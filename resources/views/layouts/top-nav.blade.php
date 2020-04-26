@@ -28,24 +28,13 @@
        
         <!-- Notifications Dropdown Menu -->
         @guest
-           <!-- <li class="">
-                <div class="nav-item dropdown">
-                      <button type="item" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
-                          Login as
-                      </button>
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" href="{{ route('login') }}">{{ __('bidder') }}</a>
-                          <a class="dropdown-item" href="{{ route('admin.login') }}">{{ __('staff') }}</a>
-                      </div>
-                </div>
-           </li> -->
            <li class="nav-item dropdown">
-            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">LOGIN AS</a>
-            <ul class="dropdown-menu border-0 shadow">
-              <li><a href="{{ route('login') }}" class="dropdown-item">{{__('BIDDER') }}</a></li>
-              <li><a href="{{ route('admin.login') }}" class="dropdown-item">{{__('ADMIN') }}</a></li>
-            </ul>
-          </li>
+              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">LOGIN AS</a>
+              <ul class="dropdown-menu border-0 shadow">
+                <li><a href="{{ route('login') }}" class="dropdown-item">{{__('BIDDER') }}</a></li>
+                <li><a href="{{ route('admin.login') }}" class="dropdown-item">{{__('STAFF') }}</a></li>
+              </ul>
+            </li>
             @if (Route::has('register'))
                 <li class="nav-item">
                      <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
