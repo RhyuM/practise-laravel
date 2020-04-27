@@ -34,7 +34,7 @@ Route::prefix('admin')->group(function()
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     });
 Route::get('/dashboard', 'AdminController@index')->name('admin.common.index');
-Route::get('/dashboard', 'BidderController@index')->name('bidder-index');    
+Route::get('home', 'BidderController@index')->name('bidder-index');    
 
 // change password
 Route::get('change-password', 'AdminChangePasswordController@index');

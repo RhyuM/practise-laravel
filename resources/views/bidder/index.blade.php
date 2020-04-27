@@ -1,4 +1,4 @@
-@extends('bidder.dashboard')
+@extends('bidder.home')
 
 @section('action-content')
 <section class="content">

@@ -22,7 +22,7 @@ class BidderController extends Controller
      */
     public function index()
     {
-       return view('bidder/dashboard');
+       return view('bidder/home');
     }
     
 
