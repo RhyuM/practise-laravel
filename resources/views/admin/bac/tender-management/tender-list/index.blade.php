@@ -14,18 +14,10 @@
         <div class="col-12">
           <div class="card card-info">  
             <div class="card-header">
-                <h3 class="card-title">List of Tender</h3>
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                        <div class="input-group-append">
-                             <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                        </div>
-                     </div>
-                </div>
+                <h3 class="card-title">List of Tender</h3>  
                 <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 140px;">
-                        <a href="{{route('tender-list.create') }}" class = "btn btn-dark btn-sm">Add New Project</a>
+                        <a href="{{route('tender-list.create') }}" class = "btn btn-dark   btn-sm">Add New Project</a>
                      </div>
                 </div>
             </div>
@@ -39,7 +31,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                      <table id="example2" class="table table-bordered table-hover dataTable dtr-inline collapsed" role="grid" aria-describedby="example2_info">
+                      <table id="example3" class="table table-bordered table-hover dataTable dtr-inline collapsed" role="grid" aria-describedby="example2_info">
                         <thead>
                           <tr role="row">
                             <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" aria-sort="descending">#</th>
