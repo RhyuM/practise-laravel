@@ -7,7 +7,7 @@ use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Admin;
   
-class ChangePasswordController extends Controller
+class AdminChangePasswordController extends Controller
 {
     /**
      * Create a new controller instance.

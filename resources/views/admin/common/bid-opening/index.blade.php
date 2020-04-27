@@ -9,12 +9,9 @@
 @section('tendersLinkActive', 'active')
 
 @section('action-content')
-
-
   <section class="content">
       <div class="row">
         <div class="col-12">
-          <!-- <h6><td>Tenders to be open today, <b>{{Carbon\Carbon::today()->format('d-M-Y')}}</b></td></h6> -->
           <div class="card card-info">
               <div class="card-header p-0 pt-1">
                 <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
@@ -141,12 +138,11 @@
                               <!-- /.row -->
                           </div>
                       </div>
-                      
                     </div>
               </div>
               <!-- /.card -->
             </div>
-          </div>
         </div>
+      </div>
   </section>
 @endsection

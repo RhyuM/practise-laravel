@@ -70,12 +70,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link @yield('tenderStatusLinkActive')">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tender Status</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="#" class="nav-link @yield('bidsSubmittedLinkActive')">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bids Submitted</p>
