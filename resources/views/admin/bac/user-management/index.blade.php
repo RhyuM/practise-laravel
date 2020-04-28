@@ -8,7 +8,7 @@
 <section class="content">
       <div class="row">
         <div class="col-12">
-          <div class="card card-info">  
+          <div class="card card-info card-outline">  
           @if(session('message'))
             <div class="alert alert-success">
                   {{session('message')}}

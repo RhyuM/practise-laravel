@@ -23,7 +23,7 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="{{ url('change-password') }}" class="dropdown-item">
+                        <a href="{{ url('account-change-password') }}" class="dropdown-item">
                             <i class="fa fa-lock fa-fw"></i> Change Password
                         </a>
                         <div class="dropdown-divider"></div>
@@ -37,4 +37,4 @@
                     </div>
                </li>
                <!-- / logout -->
-          </nav>
+</nav>

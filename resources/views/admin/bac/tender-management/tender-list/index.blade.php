@@ -12,12 +12,12 @@
 <section class="content">
       <div class="row">
         <div class="col-12">
-          <div class="card card-info">  
+          <div class="card card-info card-outline">  
             <div class="card-header">
                 <h3 class="card-title">List of Tender</h3>  
                 <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 140px;">
-                        <a href="{{route('tender-list.create') }}" class = "btn btn-dark   btn-sm">Add New Project</a>
+                        <a href="{{route('tender-list.create') }}" class = "btn btn-primary   btn-sm">Add New Project</a>
                      </div>
                 </div>
             </div>

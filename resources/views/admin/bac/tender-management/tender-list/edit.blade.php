@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12">
-            <div class="card card-primary">
+            <div class="card card-info card-outline">
                <div class="card-header">Edit</div>
                   <div class="card-body">
                       <form action="{{route('tender-list.update', $projects->id)}}" method = "post">
