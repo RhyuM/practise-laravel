@@ -26,6 +26,7 @@ Route::resource('/tender-management/tender-list', 'ProjectController')->middlewa
 
 // bid opening
 Route::get('/bid-opening/tenders', 'BidOpeningController@index')->name('tenders.index');
+Route::get('/bid-opening/bid-openers', 'BidOpeningController@bidOpeners')->name('bid-openers');
 
 //login
 Route::prefix('admin')->group(function()

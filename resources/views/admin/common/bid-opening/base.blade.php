@@ -10,7 +10,7 @@
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Bid Opening</a></li>
-                    <li class="breadcrumb-item active">Tenders</li>
+                    <li class="breadcrumb-item active">@yield('bidOpening')</li>
                   </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
