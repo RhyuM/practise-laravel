@@ -59,10 +59,10 @@
                                                         <td>{{Carbon\Carbon::parse($project->opening_date)->format('d-M-Y h:i:s A')}}</td>
                                                         <td class="">{{$project->approve_budget_cost}}</td>
                                                         <td class="">{{$project->project_status}}</td>  
-                                                        <td>
+                                                        <td> 
                                                               @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
-                                                                  <div class="tombol-nav">
-                                                                     <a href="#" class="fas fa-file "></a><br>
+                                                                  <div class="tombol-nav" style="text-align:center">
+                                                                      <a href="#" class="fas fa-file "></a><br>
                                                                   </div>
                                                               @else
                                                                   <p>disable</p>
@@ -71,10 +71,20 @@
                                                   @endif</td>
                                               @endforeach 
                                             </tbody>
+                                            <tfoot>
+                                              <tr role="row">
+                                                <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" aria-sort="descending">#</th>
+                                                <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" aria-sort="descending">Description</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Category</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Bid Opening Date & time</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Approve Budget</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Status</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">View/Open</th>
+                                            </tfoot>
                                       </table>
                                   </div>
                               </div>
-                              <!-- /.row -->
+                              <!-- /.row -->  
                           </div>
                       </div>
 
@@ -111,7 +121,7 @@
                                                     <td class="">{{$project->project_status}}</td>  
                                                     <td>
                                                           @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
-                                                              <div class="tombol-nav">
+                                                              <div class="tombol-nav" style="text-align:center">
                                                                  <a href="#" class="fas fa-file"></a><br>
                                                               </div>
                                                           @else
