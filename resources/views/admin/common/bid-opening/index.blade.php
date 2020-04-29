@@ -64,7 +64,7 @@
                                                         <td> 
                                                               @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
                                                                   <div class="tombol-nav" style="text-align:center">
-                                                                      <a href="{{ url('bid-opening/bid-openers') }}" class="fas fa-file "></a><br>
+                                                                      <a href="{{route('bid-openers', $project->id) }}" class="fas fa-file "></a><br>
                                                                   </div>
                                                               @else
                                                                   <p>disable</p>
@@ -124,7 +124,7 @@
                                                     <td>
                                                           @if (Carbon\Carbon::now()->format('Y-m-d H:i:s') >= Carbon\Carbon::parse($project->opening_date)->format('Y-m-d H:i:s'))
                                                               <div class="tombol-nav" style="text-align:center">
-                                                                 <a href="{{ url('bid-opening/bid-openers') }}" class="fas fa-file"></a><br>
+                                                                 <a href="{{route('bid-openers', $project->id) }}" class="fas fa-file"></a><br>
                                                               </div>
                                                           @else
                                                               <p>disable</p>

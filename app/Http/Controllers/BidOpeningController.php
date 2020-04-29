@@ -32,10 +32,11 @@ class BidOpeningController extends Controller
         return view('admin.common.bid-opening.index',compact('projects'));
     }   
     
-    public function bidOpeners()
+    public function bidOpeners($id)
     {
         $admins = Admin::all();
-
-        return view('admin.common.bid-opening.bid-openers',compact('admins'));
+        $projects = Project::find($id);
+        
+        return view('admin.common.bid-opening.bid-openers',['projects'=> $projects, 'admins' => $admins]);
     }   
 }
