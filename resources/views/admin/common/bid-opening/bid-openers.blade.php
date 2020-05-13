@@ -16,15 +16,19 @@
         <div class="row">
             <div class="col-sm-12">
                  <div class="callout callout-info">
-                    <dl class="row">
-                      <dt class="col-sm-3">Tender ID :</dt>
-                      <dd class="col-sm-9">{{$projects->id}}</dd>
-
-                      <dt class="col-sm-3">Description :</dt>
-                      <dd class="col-sm-9">{{$projects->description}}</dd>
-                      
-                      <dt class="col-sm-3">Bid Opening Date & Time :</dt>
-                      <dd class="col-sm-9">{{Carbon\Carbon::parse($projects->opening_date)->format('d-M-Y h:i:s A')}}</dd>
+                    <dl>
+                        <div class="row">
+                            <dt class="col-sm-3 text-sm-right">Tender ID :</dt>
+                            <dd class="col-sm-4 text-sm-left">{{$projects->id}}</dd>
+                        </div>
+                        <div class="row">
+                            <dt class="col-sm-3 col-form-label text-sm-right">Description:</dt>
+                            <dd class="col-sm-4 col-form-label text-sm-left">{{$projects->description}}</dd>
+                        </div>
+                        <div class="row">
+                            <dt class="col-sm-3 col-form-label text-sm-right">Bid Opening Date & Time :</dt>
+                            <dd class="col-sm-4 col-form-label text-sm-left">{{Carbon\Carbon::parse($projects->opening_date)->format('d-M-Y h:i:s A')}}</dd>
+                        </div>
                     </dl>
                  </div> 
             </div>

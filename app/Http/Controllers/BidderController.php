@@ -23,6 +23,7 @@ class BidderController extends Controller
     {
         return view('bidder.change-password.index');
     } 
+    
     public function store(Request $request)
     {
         $request->validate([

@@ -31,14 +31,40 @@
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
        
         <!-- Notifications Dropdown Menu -->
+        
+        
         @guest
-           <li class="nav-item dropdown">
-              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">LOGIN AS</a>
-              <ul class="dropdown-menu border-0 shadow">
-                <li><a href="{{ route('login') }}" class="dropdown-item">{{__('BIDDER') }}</a></li>
-                <li><a href="{{ route('admin.login') }}" class="dropdown-item">{{__('STAFF') }}</a></li>
-              </ul>
-            </li>
+            <!-- <div class="btn-group">
+                    <button type="button" class="btn btn-info">LOGIN AS</button>
+                    <button type="button" class="btn btn-info dropdown-toggle dropdown-hover dropdown-icon" data-toggle="dropdown">
+                      <span class="sr-only">Toggle Dropdown</span>
+                      <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                      </div>
+                    </button>
+             </div> -->
+
+             <li class="nav-item dropdown">
+                      <button type="button" class="btn btn-dark dropdown-toggle dropdown-hover" data-toggle="dropdown" class="nav-link dropdown-toggle">LOGIN AS
+                        <span class="sr-only">Toggle Dropdown</span>
+                        <ul class="dropdown-menu  border-0 shadow">
+                          <li><a href="{{ route('login') }}"  class="dropdown-item">{{__('BIDDER') }}</a></li>
+                          <li><a href="{{ route('admin.login') }}" class="dropdown-item">{{__('STAFF') }}</a></li>
+                        </ul>
+                      </button>
+             </li>
+
+             <li class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">LOGIN AS</a>
+                <ul class="dropdown-menu border-0 shadow">
+                  <li><a href="{{ route('login') }}" class="dropdown-item">{{__('BIDDER') }}</a></li>
+                  <li><a href="{{ route('admin.login') }}" class="dropdown-item">{{__('STAFF') }}</a></li>
+                </ul>
+              </li>
             @if (Route::has('register'))
                 <li class="nav-item">
                      <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>

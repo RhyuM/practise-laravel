@@ -67,7 +67,7 @@
                                                                       <a href="{{route('bid-openers', $project->id) }}" class="fas fa-file "></a><br>
                                                                   </div>
                                                               @else
-                                                                  <p>disable</p>
+                                                                  <p></p>
                                                               @endif</td> 
                                                     </tr>
                                                   @endif</td>
@@ -127,7 +127,7 @@
                                                                  <a href="{{route('bid-openers', $project->id) }}" class="fas fa-file"></a><br>
                                                               </div>
                                                           @else
-                                                              <p>disable</p>
+                                                              <p></p>
                                                           @endif</td> 
                                                 </tr>
                                               @endif</td>
