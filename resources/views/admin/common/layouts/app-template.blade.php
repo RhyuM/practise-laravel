@@ -3,9 +3,12 @@
 <head>
   @include('admin.common.layouts.head')
 </head>
-
-<body class="hold-transition sidebar-mini layout-fixed sidebar-open text-sm">
-<!-- <body class="hold-transition sidebar-mini layout-fixed sidebar-close text-sm sidebar-collapse"> -->
+@if((new \Jenssegers\Agent\Agent())->isDesktop())
+  <body class="hold-transition sidebar-mini layout-fixed sidebar-open text-sm">
+@endif
+@if((new \Jenssegers\Agent\Agent())->isMobile())
+  <body class="hold-transition sidebar-mini layout-fixed sidebar-close text-sm sidebar-collapse">
+@endif
     <div class="wrapper">
           <!-- Navbar -->
          @include('admin.common.layouts.navbar')
