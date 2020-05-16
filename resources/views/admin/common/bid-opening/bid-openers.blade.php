@@ -34,5 +34,118 @@
             </div>
         </div>  
     </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-info card-outline">  
+                <div class="card-header">
+                    <h3 class="card-title">Bid Openers</h3>  
+                </div>
+                
+                <div class="card-body">
+                    <div class="container-fluid">
+                    <!-- row for BAC openers -->
+                        <div class="row">
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>BID AND AWARDS COMMITEE</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/KZ.jpg') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>BID AND AWARDS COMMITEE</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/avatar2.png') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>BID AND AWARDS COMMITEE</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/avatar3.png') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>BID AND AWARDS COMMITEE</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/avatar4.png') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <!-- row for TWG openers -->
+                        <div class="row">
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>TECHNICAL WORKING GROUP</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/eva.jpg') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>TECHNICAL WORKING GROUP</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/avatar5.png') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <h5>TECHNICAL WORKING GROUP</h5>
+                                        <p>{{ Auth::user()->first_name}} {{ Auth::user()->middle_name}} {{ Auth::user()->last_name}}</p>
+                                    </div>
+                                          
+                                    <div class="icon">
+                                        <i> <img src="{{ asset('dist/img/avatar5.png') }}" width="80 " height="80" class="center" alt="User Image"></i>
+                                    </div>
+                                    <a class="small-box">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
 </section>
 @endsection
