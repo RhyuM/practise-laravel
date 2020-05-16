@@ -5,6 +5,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed sidebar-open text-sm">
+<!-- <body class="hold-transition sidebar-mini layout-fixed sidebar-close text-sm sidebar-collapse"> -->
     <div class="wrapper">
           <!-- Navbar -->
          @include('admin.common.layouts.navbar')
