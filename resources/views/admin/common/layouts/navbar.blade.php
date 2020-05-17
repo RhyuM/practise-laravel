@@ -23,6 +23,9 @@
                         <i class="fa fa-caret-down"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
+                        <a href="{{ url('user-profile') }}" class="dropdown-item">
+                            <i class="fa fa-user fa-fw"></i>User Profile
+                        </a>
                         <a href="{{ url('change-password') }}" class="dropdown-item">
                             <i class="fa fa-lock fa-fw"></i> Change Password
                         </a>

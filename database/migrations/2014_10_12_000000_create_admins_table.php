@@ -19,6 +19,7 @@ class CreateAdminsTable extends Migration
             $table->string('last_name');
             $table->string('middle_name');
             $table->string('email')->unique();
+            $table->string('avatar')->default('user.jpg');
             $table->string('password');
             $table->enum('role',  ['BAC', 'TWG']);
             $table->rememberToken();

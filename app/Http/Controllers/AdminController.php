@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Admin;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\User;
@@ -27,13 +27,37 @@ class AdminController extends Controller
         return view('admin.common.index', compact('users','projects'));
     }
     
-     //change password
     public function changePassword()
     {
         return view('admin.common.change-password.index');
     } 
 
-    public function store(Request $request)
+    public function userProfile()
+    {
+        $admin = Auth::user();
+        return view('admin.common.profile.index' , compact('admin', $admin));
+    }
+
+    public function update_avatar(Request $request){
+
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $admin = Auth::user();
+
+        $avatarName = $admin->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+
+        $request->avatar->storeAs('public/avatars',$avatarName);
+
+        $admin->avatar = $avatarName;
+        $admin->save();
+
+        return back()->with('success','You have successfully upload image.');
+
+    } 
+
+    public function update(Request $request)
     {
         $request->validate([
             'current_password' => [new MatchOldPassword],

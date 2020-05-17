@@ -17,7 +17,7 @@
                 <h3 class="card-title">List of Tender</h3>  
                 <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 140px;">
-                        <a href="{{route('tender-list.create') }}" class = "btn btn-primary   btn-sm">Add New Project</a>
+                        <a href="{{route('tender-list.create') }}" class = "btn btn-primary   btn-sm">Add New Tender</a>
                      </div>
                 </div>
             </div>

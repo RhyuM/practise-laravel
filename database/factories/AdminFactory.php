@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Admin;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -16,17 +16,14 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Admin::class, function (Faker $faker) {
     return [
         'first_name' => $faker->firstname,
         'last_name' => $faker->lastname,
         'middle_name' => $faker->lastname,
         'email' => $faker->unique()->safeEmail,
         'password' => bcrypt('ryanmags23'),
-        'company_name' => $faker->company,
-        'address' => $faker->address,
-        'philgeps_certificate' => asset('dist/img/avatar2.png'),
-        'account_status' => '0',
+        'role' => $faker->randomElement(['TWG' ,'BAC']),
         'remember_token' => Str::random(10),
     ];
 });

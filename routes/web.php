@@ -39,7 +39,11 @@ Route::get('home', 'BidderController@index')->name('bidder-index');
 
 // change password
 Route::get('change-password', 'AdminController@changePassword');
-Route::post('change-password', 'AdminController@store')->name('change.password');
+Route::post('change-password', 'AdminController@update')->name('change.password');
+
+//user profile
+Route::get('user-profile', 'AdminController@userProfile');
+Route::post('profile', 'AdminController@update_avatar');
 
 Route::get('account-change-password', 'BidderController@changePassword');
-Route::post('account-change-password', 'BidderController@store')->name('account.change.password');
+Route::post('account-change-password', 'BidderController@update')->name('account.change.password');

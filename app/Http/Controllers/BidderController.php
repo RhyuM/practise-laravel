@@ -24,7 +24,7 @@ class BidderController extends Controller
         return view('bidder.change-password.index');
     } 
     
-    public function store(Request $request)
+    public function update(Request $request)
     {
         $request->validate([
             'current_password' => [new MatchOldPassword],
